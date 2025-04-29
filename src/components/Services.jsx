@@ -83,7 +83,7 @@ const Services = () => {
               <div
                 key={index}
                 className={`aspect-square min-w-[300px] sm:min-w-[320px] bg-white rounded-lg shadow-md p-6 snap-center transition-all duration-300 ${
-                  activeIndex === index ? 'border-2 border-pink-500' : 'border border-transparent'
+                  activeIndex === index ? 'border-2 bg-gradient-to-r from-[#57007B] to-[#F76680] bg-amber-50 bg-clip-text text-transparent ' : 'border border-transparent'
                 }`}
               >
                 <div className="flex flex-col items-center text-left justify-center h-full">

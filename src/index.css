@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --primary-bg:linear-gradient(to right, #57007B,#F76680);
+}
+
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
