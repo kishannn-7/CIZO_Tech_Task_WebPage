@@ -82,7 +82,7 @@ const CaseStudies = () => {
   ];
 
   return (
-    <section className="py-16 px-4 w-full bg-[#F7F7FA] shadow-">
+    <section id="case-studies" className="py-16 px-4 w-full bg-[#F7F7FA] shadow-">
       <div className="mx-4 h-auto sm:mx-15 lg:mx-30 w-auto">
         {/* Header */}
         <div className="flex flex-col items-center mb-16 relative">

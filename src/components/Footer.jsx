@@ -17,7 +17,7 @@ const Footer = () => {
                 </div>
 
                 {/* Center Section - Links */}
-                <div className="pl-10">
+                <div className="md:pl-10">
                     <h3 className="font-bold mb-4 text-gray-700 max-w-50">Links</h3>
                     <ul className="space-y-2 text-base">
                         <li className='hover:text-gray-800 cursor-pointer'>About Us</li>

@@ -36,7 +36,7 @@ const resources = [
 
 const Resources = () => {
   return (
-    <section className="py-16 px-4 w-full bg-white">
+    <section id="blogs" className="py-16 px-4 w-full bg-white">
       <div className="container mx-auto">
         {/* Header */}
         <motion.div

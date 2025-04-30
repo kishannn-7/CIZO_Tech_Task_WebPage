@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ScrollAnimation from "./ScrollAnimation";
 
 const TimeLine = () => (
   <svg
@@ -198,72 +199,75 @@ const DevelopmentProcess = () => {
     <section className="py-16 px-4 bg-white">
       <div className="relative container mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center mb-16 relative"
-        >
-          <div className="absolute top-0 w-15 h-1.5 mb-4 bg-gradient-to-r from-[#57007B] to-[#F76680]"></div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal mt-8 text-center">
-            How development
-            <br />
-            <span className="font-bold text-gray-900">
-              through Alcaline works
-            </span>
-          </h2>
-        </motion.div>
+        <ScrollAnimation>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center mb-16 relative"
+          >
+            <div className="absolute top-0 w-15 h-1.5 mb-4 bg-gradient-to-r from-[#57007B] to-[#F76680]"></div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal mt-8 text-center">
+              How development
+              <br />
+              <span className="font-bold text-gray-900">
+                through Alcaline works
+              </span>
+            </h2>
+          </motion.div>
+        </ScrollAnimation>
 
         {/* Timeline */}
-        <div className="relative mt-20">
-          {/* Timeline line */}
-          <div className="hidden lg:block absolute left-0 right-0 top-1/2 transform -translate-y-1/2">
-            <TimeLine />
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2">
-              <span className="text-2xl">
-                <img
-                  src="/src/assets/logos/trophy.png"
-                  alt="icon1"
-                  className="w-15"
-                />
-              </span>
+        <ScrollAnimation delay={0.2}>
+          <div className="relative mt-20">
+            {/* Timeline line */}
+            <div className="hidden lg:block absolute left-0 right-0 top-1/2 transform -translate-y-1/2">
+              <TimeLine/>
+              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2">
+                <span className="text-2xl">
+                  <img
+                    src="/src/assets/logos/trophy.png"
+                    alt="icon1"
+                    className="w-15"
+                  />
+                </span>
+              </div>
+            </div>
+
+            {/* Steps grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+              {steps.map((step, index) => (
+                <ScrollAnimation key={step.number} delay={0.3 + index * 0.1}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className={`bg-white p-6 rounded-lg border border-gray-100 shadow-sm relative ${
+                      index >= 3 ? "lg:mt-16" : ""
+                    }`}
+                  >
+                    <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                      <span className="bg-gradient-to-r from-[#57007B] to-[#F76680] bg-clip-text text-transparent font-bold mb-2">
+                        #{step.number}
+                      </span>  {step.title}
+                    </h3>
+                    <p className="text-gray-600">{step.description}</p>
+
+                    {/* Vertical line for mobile/tablet */}
+                    {index < steps.length - 1 && (
+                      <div
+                        className="lg:hidden absolute left-1/2 transform -translate-x-1/2 h-8 w-0.5 bg-pink-500"
+                        style={{ bottom: "-2rem" }}
+                      ></div>
+                    )}
+                  </motion.div>
+                </ScrollAnimation>
+              ))}
             </div>
           </div>
-
-          {/* Steps grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`bg-white p-6 rounded-lg border border-gray-100 shadow-sm relative ${
-                  index >= 3 ? "lg:mt-16" : ""
-                }`}
-              >
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">
-                  <span className="bg-gradient-to-r from-[#57007B] to-[#F76680] bg-clip-text text-transparent font-bold mb-2">
-                    #{step.number}
-                  </span>  {step.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {step.description}
-                </p>
-
-                {/* Vertical line for mobile/tablet */}
-                {index < steps.length - 1 && (
-                  <div
-                    className="lg:hidden absolute left-1/2 transform -translate-x-1/2 h-8 w-0.5 bg-pink-500"
-                    style={{ bottom: "-2rem" }}
-                  ></div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
