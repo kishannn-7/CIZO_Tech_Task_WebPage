@@ -61,7 +61,7 @@ const TrustedBySection = () => {
             </div>
 
             {/* Scrollable wrapper */}
-            <div className="flex items-center w-full h-[200px] bg-[#F7F7FA] overflow-x-auto">
+            <div className="flex items-center w-full h-[200px] bg-[#F7F7FA] overflow-x-auto shadow-inner">
                 {/* Inner scroll container */}
                 <div
                     ref={scrollRef}
