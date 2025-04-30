@@ -1,5 +1,5 @@
 import React from 'react';
-import { FbIcon, InstaIcon, XIcon, LinkedinIcon } from './Icons';
+import { FbIcon, InstaIcon, XIcon, LinkedinIcon } from './icons';
 
 const Footer = () => {
     return (

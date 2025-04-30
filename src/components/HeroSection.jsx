@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroWrapper = () => {
     return (
-        <section className="relative w-full h-screen">
+        <section className="relative w-fit h-screen mx-4 sm:mx-15 lg:mx-30">
             <div className="flex items-center justify-center w-full h-full text-gray-700 px-4">
                 {/* HeroSection-Wrapper */}
                 <div className="flex flex-col-reverse gap-1 lg:flex-row items-center justify-baseline max-w-[1145px] mx-auto">

@@ -4,6 +4,8 @@ import HeroSection from './components/HeroSection.jsx';
 import Services from './components/Services.jsx';
 import Footer from './components/Footer.jsx';
 import AboutUs from './components/AboutUs.jsx';
+import TrustedbySection from './components/TrustedbySection.jsx';
+import TestimonialSlider from './components/TestimonialSlider.jsx';
 
 
 const App = () =>{
@@ -13,6 +15,8 @@ const App = () =>{
         <HeroSection/>
         <Services/>
         <AboutUs/>
+        <TrustedbySection/>
+        <TestimonialSlider/>
         <Footer/>
       </div>
     )
